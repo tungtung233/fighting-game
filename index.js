@@ -52,3 +52,13 @@ const enemy = new Sprite({
     y: 0,
   },
 });
+
+function animate() {
+  window.requestAnimationFrame(animate);
+  context.fillStyle = 'black';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  player.update();
+  enemy.update();
+}
+
+animate();
