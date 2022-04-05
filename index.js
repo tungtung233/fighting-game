@@ -71,8 +71,6 @@ const keys = {
   },
 };
 
-let lastKey;
-
 function animate() {
   window.requestAnimationFrame(animate);
   context.fillStyle = 'black';
