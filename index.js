@@ -8,7 +8,7 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
 class Sprite {
-  constructor({ position, velocity, color = 'red' }) {
+  constructor({ position, velocity, color = 'red', offset }) {
     this.position = position;
     this.velocity = velocity;
     this.width = 50;
@@ -16,7 +16,11 @@ class Sprite {
     this.color = color;
     this.lastKey;
     this.attackBox = {
-      position: this.position,
+      position: {
+        x: this.position.x,
+        y: this.position.y,
+      },
+      offset,
       width: 100,
       height: 50,
     };
@@ -41,6 +45,8 @@ class Sprite {
 
   update() {
     this.draw();
+    this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
+    this.attackBox.position.y = this.position.y;
 
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
@@ -70,6 +76,10 @@ const player = new Sprite({
     y: 0,
   },
   color: 'red',
+  offset: {
+    x: 0,
+    y: 0,
+  },
 });
 
 const enemy = new Sprite({
@@ -82,6 +92,10 @@ const enemy = new Sprite({
     y: 0,
   },
   color: 'blue',
+  offset: {
+    x: -50,
+    y: 0,
+  },
 });
 
 const keys = {
