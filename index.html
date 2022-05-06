@@ -1,3 +1,38 @@
-<canvas></canvas>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: relative; display: inline-block">
+    <div
+      style="
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+      "
+    >
+      <!-- player health -->
+      <div style="background-color: yellow; height: 30px; width: 100%"></div>
 
-<script src="index.js"></script>
+      <!-- timer -->
+      <div
+        style="
+          background-color: red;
+          height: 100px;
+          width: 100px;
+          flex-shrink: 0;
+        "
+      ></div>
+
+      <!-- enemy health -->
+      <div style="background-color: yellow; height: 30px; width: 100%"></div>
+    </div>
+    <canvas></canvas>
+  </div>
+  <script src="index.js"></script>
+</body>
