@@ -1,20 +1,25 @@
 class Sprite {
-  constructor({ position, imageSrc, scale = 1 }) {
+  constructor({ position, imageSrc, scale = 1, framesMax = 1 }) {
     this.position = position;
     this.width = 50;
     this.height = 150;
     this.image = new Image();
     this.image.src = imageSrc;
-    this.scale = scale
+    this.scale = scale;
+    this.framesMax = framesMax
   }
 
   draw() {
     context.drawImage(
       this.image,
-      this.position.x,
-      this.position.y,
-      this.image.width * this.scale,
-      this.image.height * this.scale
+      0, //crop location x
+      0, //crop location y
+      this.image.width / this.framesMax, //crop width
+      this.image.height, //crop height
+      this.position.x, //image location x
+      this.position.y, //image location y
+      (this.image.width / this.framesMax) * this.scale, //width of cropped image
+      this.image.height * this.scale //height of cropped image
     );
   }
 
