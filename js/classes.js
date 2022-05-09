@@ -6,13 +6,14 @@ class Sprite {
     this.image = new Image();
     this.image.src = imageSrc;
     this.scale = scale;
-    this.framesMax = framesMax
+    this.framesMax = framesMax;
+    this.framesCurrent = 0;
   }
 
   draw() {
     context.drawImage(
       this.image,
-      0, //crop location x
+      this.framesCurrent * (this.image.width / this.framesMax), //crop location x
       0, //crop location y
       this.image.width / this.framesMax, //crop width
       this.image.height, //crop height
@@ -25,6 +26,11 @@ class Sprite {
 
   update() {
     this.draw();
+    if (this.framesCurrent < this.framesMax - 1) {
+      this.framesCurrent++;
+    } else {
+      this.framesCurrent = 0;
+    }
   }
 }
 
