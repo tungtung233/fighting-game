@@ -48,6 +48,10 @@ const player = new Fighter({
     y: 157,
   },
   sprites: {
+    idle: {
+      imageSrc: './assets/samuraiMack/idle.png',
+      framesMax: 8,
+    },
     run: {
       imageSrc: './assets/samuraiMack/run.png',
       framesMax: 8,
@@ -101,6 +105,8 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
+  player.image = player.sprites.idle.image;
+  player.framesMax = player.sprites.idle.framesMax;
   if (keys.d.pressed && player.lastKey === 'd') {
     player.velocity.x = 5;
     player.image = player.sprites.run.image;
