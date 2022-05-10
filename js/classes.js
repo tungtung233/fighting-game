@@ -120,4 +120,21 @@ class Fighter extends Sprite {
       this.isAttacking = false;
     }, 100);
   }
+
+  switchSprite(sprite) {
+    switch (sprite) {
+      case 'idle':
+        if (this.image !== this.sprites.idle.image) {
+          this.image = this.sprites.idle.image;
+          this.framesMax = this.sprites.idle.framesMax;
+        }
+        break;
+      case 'run':
+        if (this.image !== this.sprites.run.image) {
+          this.image = this.sprites.run.image;
+          this.framesMax = this.sprites.run.framesMax;
+        }
+        break;
+    }
+  }
 }
