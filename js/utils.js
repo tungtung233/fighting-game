@@ -35,3 +35,14 @@ function decreaseTimer() {
     determineWinner({ player, enemy, timerId });
   }
 }
+
+// detect which direction to face
+function faceDirection({ player, enemy }) {
+  if (player.position.x >= enemy.position.x) {
+    player.flipHorizontal = true;
+    enemy.flipHorizontal = true;
+  } else {
+    player.flipHorizontal = false;
+    enemy.flipHorizontal = false;
+  }
+}

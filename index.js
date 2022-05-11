@@ -35,7 +35,6 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
-  color: 'red',
   offset: {
     x: 0,
     y: 0,
@@ -80,7 +79,6 @@ const enemy = new Fighter({
     x: 0,
     y: 0,
   },
-  color: 'blue',
   offset: {
     x: -50,
     y: 0,
@@ -139,6 +137,7 @@ function animate() {
   context.fillRect(0, 0, canvas.width, canvas.height);
   background.update();
   shop.update();
+  faceDirection({ player, enemy });
   player.update();
   enemy.update();
 

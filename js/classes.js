@@ -19,7 +19,12 @@ class Sprite {
     this.offset = offset;
   }
 
-  draw() {
+  draw(flipHorizontal) {
+    if (flipHorizontal) {
+      context.translate(this.position.x + this.position.x + 50, 0);
+      context.scale(-1, 1);
+    }
+
     context.drawImage(
       this.image,
       this.framesCurrent * (this.image.width / this.framesMax), //crop location x
@@ -31,6 +36,8 @@ class Sprite {
       (this.image.width / this.framesMax) * this.scale, //width of cropped image
       this.image.height * this.scale //height of cropped image
     );
+
+    context.setTransform(1, 0, 0, 1, 0, 0);
   }
 
   animateFrame() {
@@ -55,12 +62,12 @@ class Fighter extends Sprite {
   constructor({
     position,
     velocity,
-    color = 'red',
     imageSrc,
     scale = 1,
     framesMax = 1,
     offset = { x: 0, y: 0 },
     sprites,
+    flipHorizontal,
   }) {
     super({
       position,
@@ -73,7 +80,6 @@ class Fighter extends Sprite {
     this.velocity = velocity;
     this.width = 50;
     this.height = 150;
-    this.color = color;
     this.lastKey;
     this.attackBox = {
       position: {
@@ -90,6 +96,7 @@ class Fighter extends Sprite {
     this.framesElapsed = 0;
     this.framesHold = 6;
     this.sprites = sprites;
+    this.flipHorizontal = flipHorizontal;
 
     for (const sprite in this.sprites) {
       sprites[sprite].image = new Image();
@@ -98,7 +105,7 @@ class Fighter extends Sprite {
   }
 
   update() {
-    this.draw();
+    this.draw(this.flipHorizontal);
     this.animateFrame();
 
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
