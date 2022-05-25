@@ -21,7 +21,7 @@ class Sprite {
 
   draw(flipHorizontal) {
     if (flipHorizontal) {
-      context.translate(this.position.x + this.position.x + 50, 0);
+      context.translate(this.position.x + this.position.x + 80, 0);
       context.scale(-1, 1);
     }
 
