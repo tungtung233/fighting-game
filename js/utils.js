@@ -47,14 +47,35 @@ function faceDirection({ player, enemy }) {
   }
 }
 
-function startGame() {
-  toggleScreen('startScreen', false);
-  toggleScreen('game', true);
-  decreaseTimer();
+function selectFighter(id) {
+  switch (id) {
+    case 'samuraiMack':
+      return JSON.parse(JSON.stringify(samuraiMack)); //creating a deep copy
+    case 'kenji':
+      return JSON.parse(JSON.stringify(kenji));
+    case 'wizard':
+      return JSON.parse(JSON.stringify(wizard));
+  }
+}
+
+function switchFighter(id, playerOrEnemy) {
+  if (playerOrEnemy === 'player') {
+    player = new Fighter(selectFighter(id));
+  } else {
+    enemy = new Fighter(selectFighter(id));
+  }
 }
 
 function toggleScreen(id, toggle) {
   let element = document.getElementById(id);
   let display = toggle ? 'inline-block' : 'none';
   element.style.display = display;
+}
+
+function startGame() {
+  toggleScreen('startScreen', false);
+  toggleScreen('game', true);
+  decreaseTimer();
+  player.position.x = 100;
+  enemy.position.x = 800;
 }

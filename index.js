@@ -26,11 +26,8 @@ const shop = new Sprite({
   framesMax: 6,
 });
 
-const player = new Fighter(kenji);
-const enemy = new Fighter(wizard);
-
-player.position.x = 100;
-enemy.position.x = 800;
+let player = new Fighter(samuraiMack); //default starter fighter
+let enemy = new Fighter(kenji); //default starter fighter
 
 const keys = {
   d: {
