@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <div id="game" style="position: relative; display: inline-block">
+  <div id="startScreen" class="screen" style="display: block">
+    <button onClick="startGame()">Start Game</button>
+  </div>
+  <div id="game" style="position: relative; display: none">
     <div class="healthTimer">
       <!-- player health -->
       <div id="playerHealthContainer" class="healthContainer">

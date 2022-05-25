@@ -22,7 +22,7 @@ function determineWinner({ player, enemy, timerId }) {
   }
 }
 
-let timer = 30;
+let timer = 31;
 let timerId;
 function decreaseTimer() {
   if (timer > 0) {
@@ -45,4 +45,16 @@ function faceDirection({ player, enemy }) {
     player.flipHorizontal = false;
     enemy.flipHorizontal = false;
   }
+}
+
+function startGame() {
+  toggleScreen('startScreen', false);
+  toggleScreen('game', true);
+  decreaseTimer();
+}
+
+function toggleScreen(id, toggle) {
+  let element = document.getElementById(id);
+  let display = toggle ? 'inline-block' : 'none';
+  element.style.display = display;
 }

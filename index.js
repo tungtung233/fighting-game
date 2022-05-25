@@ -161,8 +161,6 @@ const keys = {
   },
 };
 
-decreaseTimer();
-
 function animate() {
   window.requestAnimationFrame(animate);
   context.fillStyle = 'black';
