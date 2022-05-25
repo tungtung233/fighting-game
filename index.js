@@ -98,7 +98,7 @@ function animate() {
   if (
     rectangularCollision({ rectangle1: player, rectangle2: enemy }) &&
     player.isAttacking &&
-    player.framesCurrent === 4
+    player.framesCurrent === player.sprites.attack.collide
   ) {
     enemy.takeHit();
     player.isAttacking = false;
@@ -108,24 +108,30 @@ function animate() {
   }
 
   // if player misses attack
-  if (player.isAttacking && player.framesCurrent === 4) {
+  if (
+    player.isAttacking &&
+    player.framesCurrent === player.sprites.attack.collide
+  ) {
     player.isAttacking = false;
   }
 
   if (
     rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
     enemy.isAttacking &&
-    enemy.framesCurrent === 2
+    enemy.framesCurrent === enemy.sprites.attack.collide
   ) {
     player.takeHit();
     enemy.isAttacking = false;
-        gsap.to('#playerHealth', {
-          width: player.health + '%',
-        });
+    gsap.to('#playerHealth', {
+      width: player.health + '%',
+    });
   }
 
   // if enemy misses attack
-  if (enemy.isAttacking && enemy.framesCurrent === 2) {
+  if (
+    enemy.isAttacking &&
+    enemy.framesCurrent === enemy.sprites.attack.collide
+  ) {
     enemy.isAttacking = false;
   }
 

@@ -34,6 +34,7 @@ const samuraiMack = {
     attack: {
       imageSrc: './assets/samuraiMack/attack.png',
       framesMax: 6,
+      collide: 4, //which frame to trigger the opposing take-hit animation
     },
     takeHit: {
       imageSrc: './assets/samuraiMack/take-hit-white-silhouette.png',
@@ -90,6 +91,7 @@ const kenji = {
     attack: {
       imageSrc: './assets/kenji/attack.png',
       framesMax: 4,
+      collide: 2,
     },
     takeHit: {
       imageSrc: './assets/kenji/take-hit.png',
@@ -146,6 +148,7 @@ const wizard = {
     attack: {
       imageSrc: './assets/wizard/attack.png',
       framesMax: 8,
+      collide: 5,
     },
     takeHit: {
       imageSrc: './assets/wizard/take-hit.png',
