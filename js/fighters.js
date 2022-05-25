@@ -102,7 +102,7 @@ const kenji = {
   },
   attackBox: {
     offset: {
-      x: -170,
+      x: 60,
       y: 50,
     },
     width: 185,

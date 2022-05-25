@@ -114,7 +114,12 @@ class Fighter extends Sprite {
     this.draw(this.flipHorizontal);
     if (!this.dead) this.animateFrame();
 
-    this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
+    this.attackBox.position.x =
+      this.position.x +
+      this.attackBox.offset.x +
+      (this.flipHorizontal
+        ? -this.attackBox.offset.x - this.attackBox.width
+        : 0);
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
     //visualise attackBox
