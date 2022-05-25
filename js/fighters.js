@@ -109,3 +109,59 @@ const kenji = {
     height: 50,
   },
 };
+
+const wizard = {
+  position: {
+    x: 0,
+    y: 0,
+  },
+  velocity: {
+    x: 0,
+    y: 0,
+  },
+  imageSrc: './assets/wizard/idle.png',
+  framesMax: 6,
+  scale: 1.6,
+  offset: {
+    x: 125,
+    y: 75,
+  },
+  sprites: {
+    idle: {
+      imageSrc: './assets/wizard/idle.png',
+      framesMax: 6,
+    },
+    run: {
+      imageSrc: './assets/wizard/run.png',
+      framesMax: 8,
+    },
+    jump: {
+      imageSrc: './assets/wizard/jump.png',
+      framesMax: 2,
+    },
+    fall: {
+      imageSrc: './assets/wizard/fall.png',
+      framesMax: 2,
+    },
+    attack: {
+      imageSrc: './assets/wizard/attack.png',
+      framesMax: 8,
+    },
+    takeHit: {
+      imageSrc: './assets/wizard/take-hit.png',
+      framesMax: 4,
+    },
+    death: {
+      imageSrc: './assets/wizard/death.png',
+      framesMax: 7,
+    },
+  },
+  attackBox: {
+    offset: {
+      x: 120,
+      y: 50,
+    },
+    width: 150,
+    height: 50,
+  },
+};
