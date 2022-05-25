@@ -40,10 +40,10 @@ function decreaseTimer() {
 function faceDirection({ player, enemy }) {
   if (player.position.x >= enemy.position.x) {
     player.flipHorizontal = true;
-    enemy.flipHorizontal = true;
+    enemy.flipHorizontal = false;
   } else {
     player.flipHorizontal = false;
-    enemy.flipHorizontal = false;
+    enemy.flipHorizontal = true;
   }
 }
 
