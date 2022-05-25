@@ -72,10 +72,13 @@ function toggleScreen(id, toggle) {
   element.style.display = display;
 }
 
+let gameAlive = false;
+
 function startGame() {
   toggleScreen('startScreen', false);
   toggleScreen('game', true);
   decreaseTimer();
+  gameAlive = true;
   player.position.x = 100;
   enemy.position.x = 800;
 }

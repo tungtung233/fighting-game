@@ -143,7 +143,7 @@ function animate() {
 animate();
 
 window.addEventListener('keydown', (event) => {
-  if (!player.dead) {
+  if (!player.dead && gameAlive) {
     switch (event.key) {
       // Player
       case 'd':
@@ -162,7 +162,7 @@ window.addEventListener('keydown', (event) => {
         break;
     }
   }
-  if (!enemy.dead) {
+  if (!enemy.dead && gameAlive) {
     switch (event.key) {
       // Enemy
       case 'ArrowRight':
