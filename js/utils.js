@@ -47,8 +47,8 @@ function faceDirection({ player, enemy }) {
   }
 }
 
-function selectFighter(id) {
-  switch (id) {
+function selectFighter(fighter) {
+  switch (fighter) {
     case 'samuraiMack':
       return JSON.parse(JSON.stringify(samuraiMack)); //creating a deep copy
     case 'kenji':
@@ -58,11 +58,30 @@ function selectFighter(id) {
   }
 }
 
-function switchFighter(id, playerOrEnemy) {
+function switchFighter(id) {
+  const fighter = id.split('-')[0];
+  const playerOrEnemy = id.split('-')[1];
+
   if (playerOrEnemy === 'player') {
-    player = new Fighter(selectFighter(id));
+    player = new Fighter(selectFighter(fighter));
+
+    if (document.querySelector('.select-player')) {
+      document
+        .querySelector('.select-player')
+        .classList.remove('select-player');
+    }
+
+    document.querySelector(`#${id}`).classList.add('select-player');
   } else {
-    enemy = new Fighter(selectFighter(id));
+    enemy = new Fighter(selectFighter(fighter));
+
+    if (document.querySelector('.select-enemy')) {
+      document
+        .querySelector('.select-enemy')
+        .classList.remove('select-enemy');
+    }
+
+    document.querySelector(`#${id}`).classList.add('select-enemy');
   }
 }
 
