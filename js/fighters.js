@@ -168,3 +168,60 @@ const wizard = {
     height: 50,
   },
 };
+
+const huntress = {
+  position: {
+    x: 0,
+    y: 0,
+  },
+  velocity: {
+    x: 0,
+    y: 0,
+  },
+  imageSrc: './assets/huntress/idle.png',
+  framesMax: 8,
+  scale: 3.2,
+  offset: {
+    x: 125,
+    y: 160,
+  },
+  sprites: {
+    idle: {
+      imageSrc: './assets/huntress/idle.png',
+      framesMax: 8,
+    },
+    run: {
+      imageSrc: './assets/huntress/run.png',
+      framesMax: 8,
+    },
+    jump: {
+      imageSrc: './assets/huntress/jump.png',
+      framesMax: 2,
+    },
+    fall: {
+      imageSrc: './assets/huntress/fall.png',
+      framesMax: 2,
+    },
+    attack: {
+      imageSrc: './assets/huntress/attack.png',
+      framesMax: 5,
+      collide: 3,
+    },
+    takeHit: {
+      imageSrc: './assets/huntress/take-hit.png',
+      framesMax: 3,
+    },
+    death: {
+      imageSrc: './assets/huntress/death.png',
+      framesMax: 8,
+    },
+  },
+  attackBox: {
+    offset: {
+      x: 140,
+      y: 50,
+    },
+    width: 135,
+    height: 50,
+  },
+};
