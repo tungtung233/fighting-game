@@ -55,6 +55,8 @@ function selectFighter(fighter) {
       return JSON.parse(JSON.stringify(kenji));
     case 'wizard':
       return JSON.parse(JSON.stringify(wizard));
+    case 'huntress':
+      return JSON.parse(JSON.stringify(huntress));
   }
 }
 
