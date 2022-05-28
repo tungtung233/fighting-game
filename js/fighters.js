@@ -9,6 +9,7 @@ const samuraiMack = {
   },
   imageSrc: './assets/samuraiMack/idle.png',
   framesMax: 8,
+  width: 37,
   scale: 2.5,
   offset: {
     x: 215,
@@ -66,6 +67,7 @@ const kenji = {
   },
   imageSrc: './assets/kenji/idle.png',
   framesMax: 4,
+  width: 33,
   scale: 2.5,
   offset: {
     x: 215,
@@ -123,6 +125,7 @@ const wizard = {
   },
   imageSrc: './assets/wizard/idle.png',
   framesMax: 6,
+  width: 57,
   scale: 1.6,
   offset: {
     x: 125,
@@ -180,9 +183,10 @@ const huntress = {
   },
   imageSrc: './assets/huntress/idle.png',
   framesMax: 8,
+  width: 32,
   scale: 3.2,
   offset: {
-    x: 125,
+    x: 200,
     y: 160,
   },
   sprites: {

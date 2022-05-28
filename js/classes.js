@@ -7,7 +7,6 @@ class Sprite {
     offset = { x: 0, y: 0 },
   }) {
     this.position = position;
-    this.width = 50;
     this.height = 150;
     this.image = new Image();
     this.image.src = imageSrc;
@@ -21,7 +20,10 @@ class Sprite {
 
   draw(flipHorizontal) {
     if (flipHorizontal) {
-      context.translate(this.position.x + this.position.x + 80, 0);
+      context.translate(
+        this.position.x + this.position.x + this.width * this.scale,
+        0
+      );
       context.scale(-1, 1);
     }
 
@@ -63,6 +65,7 @@ class Fighter extends Sprite {
     position,
     velocity,
     imageSrc,
+    width,
     scale = 1,
     framesMax = 1,
     offset = { x: 0, y: 0 },
@@ -83,7 +86,7 @@ class Fighter extends Sprite {
     });
 
     this.velocity = velocity;
-    this.width = 50;
+    this.width = width;
     this.height = 150;
     this.lastKey;
     this.attackBox = {
@@ -118,17 +121,17 @@ class Fighter extends Sprite {
       this.position.x +
       this.attackBox.offset.x +
       (this.flipHorizontal
-        ? -this.attackBox.offset.x - this.attackBox.width
+        ? -this.attackBox.offset.x - this.attackBox.width + (this.width)
         : 0);
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
     //visualise attackBox
-    // context.fillRect(
-    //   this.attackBox.position.x,
-    //   this.attackBox.position.y,
-    //   this.attackBox.width,
-    //   this.attackBox.height
-    // );
+    context.fillRect(
+      this.attackBox.position.x,
+      this.attackBox.position.y,
+      this.attackBox.width,
+      this.attackBox.height
+    );
 
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
