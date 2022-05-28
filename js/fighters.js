@@ -164,10 +164,10 @@ const wizard = {
   },
   attackBox: {
     offset: {
-      x: 120,
+      x: 135,
       y: 50,
     },
-    width: 150,
+    width: 105,
     height: 50,
   },
 };
@@ -222,7 +222,7 @@ const huntress = {
   },
   attackBox: {
     offset: {
-      x: 140,
+      x: 60,
       y: 50,
     },
     width: 135,
