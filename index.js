@@ -138,6 +138,11 @@ function animate() {
   if (player.health <= 0 || enemy.health <= 0) {
     determineWinner({ player, enemy, timerId });
   }
+
+  // end game if timer is 0
+  if (timer === 0) {
+    determineWinner({ player, enemy, timerId });
+  }
 }
 
 animate();
