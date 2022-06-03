@@ -9,67 +9,77 @@
 </head>
 <body>
   <div id="startScreen" class="screen" style="display: block">
-    <h3>Select Player 1 Fighter:</h3>
-    <div>
-      <img
-        src="./assets/samuraiMack/avatar.png"
-        alt="Samurai Mack"
-        id="samuraiMack-player"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
-      <img
-        src="./assets/kenji/avatar.png"
-        alt="Kenji"
-        id="kenji-player"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
-      <img
-        src="./assets/wizard/avatar.png"
-        alt="Wizard"
-        id="wizard-player"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
-      <img
-        src="./assets/huntress/avatar.png"
-        alt="Huntress"
-        id="huntress-player"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
+    <div id="player1">
+      <h3>Player 1</h3>
+      <div class="fighterDetails">
+        <div>
+          <img
+            src="./assets/samuraiMack/avatar.png"
+            alt="Samurai Mack"
+            id="samuraiMack-player"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+          <img
+            src="./assets/kenji/avatar.png"
+            alt="Kenji"
+            id="kenji-player"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+          <img
+            src="./assets/wizard/avatar.png"
+            alt="Wizard"
+            id="wizard-player"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+          <img
+            src="./assets/huntress/avatar.png"
+            alt="Huntress"
+            id="huntress-player"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+        </div>
+        <img src="./assets/keyboard/keyboardPlayer.png" class="keyboard" />
+      </div>
     </div>
-    <h3>Select Player 2 Fighter:</h3>
-    <div>
-      <img
-        src="./assets/samuraiMack/avatar.png"
-        alt="Samurai Mack"
-        id="samuraiMack-enemy"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
-      <img
-        src="./assets/kenji/avatar.png"
-        alt="Kenji"
-        id="kenji-enemy"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
-      <img
-        src="./assets/wizard/avatar.png"
-        alt="Wizard"
-        id="wizard-enemy"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
-      <img
-        src="./assets/huntress/avatar.png"
-        alt="Huntress"
-        id="huntress-enemy"
-        class="fighterAvatar"
-        onClick="switchFighter(id)"
-      />
+    <div id="player2">
+      <h3>Player 2</h3>
+      <div class="fighterDetails">
+        <div>
+          <img
+            src="./assets/samuraiMack/avatar.png"
+            alt="Samurai Mack"
+            id="samuraiMack-enemy"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+          <img
+            src="./assets/kenji/avatar.png"
+            alt="Kenji"
+            id="kenji-enemy"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+          <img
+            src="./assets/wizard/avatar.png"
+            alt="Wizard"
+            id="wizard-enemy"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+          <img
+            src="./assets/huntress/avatar.png"
+            alt="Huntress"
+            id="huntress-enemy"
+            class="fighterAvatar"
+            onClick="switchFighter(id)"
+          />
+        </div>
+        <img src="./assets/keyboard/keyboardEnemy.png" class="keyboard" />
+      </div>
     </div>
     <button onClick="startGame()">Start Game</button>
   </div>

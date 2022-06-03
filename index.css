@@ -9,18 +9,27 @@
   height: 576;
 }
 
+.fighterDetails {
+  display: flex;
+  align-items: space-around;
+}
+
 .fighterAvatar {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   border: 2px solid grey;
   border-radius: 50px;
   padding: 10px;
-  margin: 50px;
+  margin: 5px;
   opacity: 0.4;
 }
 
 .fighterAvatar:hover {
   opacity: 1;
+}
+
+.keyboard {
+  height: 150px;
 }
 
 .select-player {
