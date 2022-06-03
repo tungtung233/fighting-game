@@ -12,14 +12,19 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
 
 function determineWinner({ player, enemy, timerId }) {
   clearTimeout(timerId);
-  document.querySelector('#displayText').style.display = 'flex';
+  document.querySelector('#endOfGame').style.display = 'flex';
   if (player.health === enemy.health) {
-    document.querySelector('#displayText').innerHTML = 'Tie';
+    document.querySelector('#results').innerHTML = 'Tie';
   } else if (player.health > enemy.health) {
-    document.querySelector('#displayText').innerHTML = 'Player 1 Wins!';
+    document.querySelector('#results').innerHTML = 'Player 1 Wins!';
+    document.querySelector('#results').style.color =
+      'var(--color--player-dark-blue)';
   } else if (enemy.health > player.health) {
-    document.querySelector('#displayText').innerHTML = 'Player 2 Wins!';
+    document.querySelector('#results').innerHTML = 'Player 2 Wins!';
+    document.querySelector('#results').style.color =
+      'var(--color--enemy-dark-purple)';
   }
+  gameAlive = false;
 }
 
 let timer = 31;
@@ -78,9 +83,7 @@ function switchFighter(id) {
     enemy = new Fighter(selectFighter(fighter));
 
     if (document.querySelector('.select-enemy')) {
-      document
-        .querySelector('.select-enemy')
-        .classList.remove('select-enemy');
+      document.querySelector('.select-enemy').classList.remove('select-enemy');
     }
 
     document.querySelector(`#${id}`).classList.add('select-enemy');
@@ -89,7 +92,7 @@ function switchFighter(id) {
 
 function toggleScreen(id, toggle) {
   let element = document.getElementById(id);
-  let display = toggle ? 'inline-block' : 'none';
+  let display = toggle ? 'flex' : 'none';
   element.style.display = display;
 }
 

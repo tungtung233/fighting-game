@@ -82,7 +82,7 @@
         <img src="./assets/keyboard/keyboardEnemy.png" class="keyboard" />
       </div>
     </div>
-    <button id="startGame" onClick="startGame()">Start Game</button>
+    <button onClick="startGame()">Start Game</button>
   </div>
   <div id="gameScreen">
     <div class="healthTimer">
@@ -102,7 +102,10 @@
       </div>
     </div>
 
-    <div id="displayText">Tie</div>
+    <div id="endOfGame">
+      <div id="results">Tie</div>
+      <button>Restart Game</button>
+    </div>
 
     <canvas class="screen"></canvas>
   </div>
