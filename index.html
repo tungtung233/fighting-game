@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <div id="startScreen" class="screen" style="display: block">
+  <div id="startScreen" class="screen">
     <div id="player1">
       <h3>Player 1</h3>
       <div class="fighterDetails">
@@ -83,7 +83,7 @@
     </div>
     <button onClick="startGame()">Start Game</button>
   </div>
-  <div id="game" style="position: relative; display: none">
+  <div id="gameScreen" class="screen">
     <div class="healthTimer">
       <!-- player health -->
       <div id="playerHealthContainer" class="healthContainer">
@@ -103,7 +103,7 @@
 
     <div id="displayText">Tie</div>
 
-    <canvas></canvas>
+    <canvas class="screen"></canvas>
   </div>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"

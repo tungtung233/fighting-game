@@ -97,7 +97,7 @@ let gameAlive = false;
 
 function startGame() {
   toggleScreen('startScreen', false);
-  toggleScreen('game', true);
+  toggleScreen('gameScreen', true);
   decreaseTimer();
   gameAlive = true;
   player.position.x = 100;

@@ -3,10 +3,20 @@
   font-family: 'Press Start 2P', cursive;
 }
 
+.screen {
+  border-radius: 20px;
+}
+
 #startScreen {
   border: 1px solid black;
   width: 1024;
   height: 576;
+  display: block;
+}
+
+#gameScreen {
+  position: relative;
+  display: none;
 }
 
 .fighterDetails {
