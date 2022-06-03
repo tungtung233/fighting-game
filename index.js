@@ -176,7 +176,7 @@ window.addEventListener('keydown', (event) => {
       case 'ArrowUp':
         enemy.velocity.y = -20;
         break;
-      case 'ArrowDown':
+      case 'Enter':
         enemy.attack();
         break;
     }
