@@ -14,15 +14,17 @@ function determineWinner({ player, enemy, timerId }) {
   clearTimeout(timerId);
   document.querySelector('#endOfGame').style.display = 'flex';
   if (player.health === enemy.health) {
+        document.querySelector('#results').style.color =
+          'var(--color-brown)';
     document.querySelector('#results').innerHTML = 'Tie';
   } else if (player.health > enemy.health) {
+    document.querySelector('#results').style.color =
+    'var(--color--player-dark-blue)';
     document.querySelector('#results').innerHTML = 'Player 1 Wins!';
-    document.querySelector('#results').style.color =
-      'var(--color--player-dark-blue)';
   } else if (enemy.health > player.health) {
-    document.querySelector('#results').innerHTML = 'Player 2 Wins!';
     document.querySelector('#results').style.color =
-      'var(--color--enemy-dark-purple)';
+    'var(--color--enemy-dark-purple)';
+    document.querySelector('#results').innerHTML = 'Player 2 Wins!';
   }
   gameAlive = false;
 }
@@ -102,7 +104,7 @@ let gameAlive = false;
 function startGame() {
   toggleScreen('startScreen', false);
   toggleScreen('gameScreen', true);
-  timer = 5
+  timer = 5;
   decreaseTimer();
   gameAlive = true;
   player.position.x = 100;
@@ -114,6 +116,7 @@ function startGame() {
   document.querySelector('#playerHealth').style.width = '100%';
   document.querySelector('#enemyHealth').style.width = '100%';
 
+  document.querySelector('#pauseGame').style.display = 'none';
   document.querySelector('#endOfGame').style.display = 'none';
 }
 
@@ -121,4 +124,10 @@ function restartGame() {
   toggleScreen('gameScreen', false);
   toggleScreen('startScreen', true);
   gameAlive = false;
+}
+
+function pauseGame() {
+  document.querySelector('#pauseGame').style.display = 'flex';
+
+  clearTimeout(timerId);
 }

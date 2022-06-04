@@ -186,6 +186,11 @@ window.addEventListener('keydown', (event) => {
         break;
     }
   }
+
+  switch (event.key) {
+    case 'Escape':
+      pauseGame();
+  }
 });
 
 window.addEventListener('keyup', (event) => {
