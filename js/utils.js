@@ -27,7 +27,7 @@ function determineWinner({ player, enemy, timerId }) {
   gameAlive = false;
 }
 
-let timer = 31;
+let timer;
 let timerId;
 function decreaseTimer() {
   if (timer > 0) {
@@ -96,13 +96,29 @@ function toggleScreen(id, toggle) {
   element.style.display = display;
 }
 
+// when gameAlive is true, players can move
 let gameAlive = false;
 
 function startGame() {
   toggleScreen('startScreen', false);
   toggleScreen('gameScreen', true);
+  timer = 5
   decreaseTimer();
   gameAlive = true;
   player.position.x = 100;
   enemy.position.x = 800;
+
+  player.health = 100;
+  enemy.health = 100;
+
+  document.querySelector('#playerHealth').style.width = '100%';
+  document.querySelector('#enemyHealth').style.width = '100%';
+
+  document.querySelector('#endOfGame').style.display = 'none';
+}
+
+function restartGame() {
+  toggleScreen('gameScreen', false);
+  toggleScreen('startScreen', true);
+  gameAlive = false;
 }
