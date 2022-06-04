@@ -14,16 +14,15 @@ function determineWinner({ player, enemy, timerId }) {
   clearTimeout(timerId);
   document.querySelector('#endOfGame').style.display = 'flex';
   if (player.health === enemy.health) {
-        document.querySelector('#results').style.color =
-          'var(--color-brown)';
+    document.querySelector('#results').style.color = 'var(--color-brown)';
     document.querySelector('#results').innerHTML = 'Tie';
   } else if (player.health > enemy.health) {
     document.querySelector('#results').style.color =
-    'var(--color--player-dark-blue)';
+      'var(--color--player-dark-blue)';
     document.querySelector('#results').innerHTML = 'Player 1 Wins!';
   } else if (enemy.health > player.health) {
     document.querySelector('#results').style.color =
-    'var(--color--enemy-dark-purple)';
+      'var(--color--enemy-dark-purple)';
     document.querySelector('#results').innerHTML = 'Player 2 Wins!';
   }
   gameAlive = false;
@@ -128,6 +127,14 @@ function restartGame() {
 
 function pauseGame() {
   document.querySelector('#pauseGame').style.display = 'flex';
+  gameAlive = false;
 
   clearTimeout(timerId);
+}
+
+function resumeGame() {
+  document.querySelector('#pauseGame').style.display = 'none';
+  gameAlive = true;
+
+  decreaseTimer();
 }
