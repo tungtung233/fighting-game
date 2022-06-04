@@ -10,9 +10,13 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
+function toggleGameModal(element, displayMode) {
+  document.querySelector(element).style.display = displayMode;
+}
+
 function determineWinner({ player, enemy, timerId }) {
   clearTimeout(timerId);
-  document.querySelector('#endOfGame').style.display = 'flex';
+  toggleGameModal('#endOfGame', 'flex');
   if (player.health === enemy.health) {
     document.querySelector('#results').style.color = 'var(--color-brown)';
     document.querySelector('#results').innerHTML = 'Tie';
@@ -115,8 +119,8 @@ function startGame() {
   document.querySelector('#playerHealth').style.width = '100%';
   document.querySelector('#enemyHealth').style.width = '100%';
 
-  document.querySelector('#pauseGame').style.display = 'none';
-  document.querySelector('#endOfGame').style.display = 'none';
+  toggleGameModal('#pauseGame', 'none');
+  toggleGameModal('#endOfGame', 'none');
 }
 
 function restartGame() {
@@ -126,14 +130,14 @@ function restartGame() {
 }
 
 function pauseGame() {
-  document.querySelector('#pauseGame').style.display = 'flex';
+  toggleGameModal('#pauseGame', 'flex');
   gameAlive = false;
 
   clearTimeout(timerId);
 }
 
 function resumeGame() {
-  document.querySelector('#pauseGame').style.display = 'none';
+  toggleGameModal('#pauseGame', 'none');
   gameAlive = true;
 
   decreaseTimer();
