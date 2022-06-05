@@ -106,6 +106,7 @@ class Fighter extends Sprite {
     this.sprites = sprites;
     this.flipHorizontal = flipHorizontal;
     this.dead = false;
+    this.jump = 0; //increases to a max of 2, so fighter can only double jump
 
     for (const sprite in this.sprites) {
       sprites[sprite].image = new Image();
@@ -144,6 +145,7 @@ class Fighter extends Sprite {
     if (this.position.y + this.height + this.velocity.y >= canvas.height - 96) {
       this.velocity.y = 0;
       this.position.y = 330;
+      this.jump = 0;
     } else {
       this.velocity.y += gravity;
     }
