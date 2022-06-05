@@ -111,11 +111,18 @@ function startGame() {
   toggleScreen('gameScreen', true);
   timer = 5;
   decreaseTimer();
-  player.position.x = 100;
-  enemy.position.x = 800;
 
+  player.position.x = 100;
+  player.position.y = player.offset.y;
+  player.velocity.x = 0;
+  player.velocity.y = 0;
   player.health = 100;
+
+  enemy.position.x = 800;
+  enemy.position.y = enemy.offset.y;
+  enemy.velocity.x = 0;
   enemy.health = 100;
+  enemy.velocity.y = 0;
 
   document.querySelector('#playerHealth').style.width = '100%';
   document.querySelector('#enemyHealth').style.width = '100%';
