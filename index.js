@@ -187,11 +187,20 @@ window.addEventListener('keydown', (event) => {
     }
   }
 
-  if (document.querySelector('#endOfGame').style.display === 'none') {
-    switch (event.key) {
-      case 'Escape':
+  switch (event.key) {
+    case 'Escape':
+      if (
+        document.querySelector('#endOfGame').style.display === 'none' &&
+        document.querySelector('#pauseGame').style.display === 'none'
+      ) {
         pauseGame();
-    }
+        break;
+      } else if (
+        document.querySelector('#pauseGame').style.display !== 'none'
+      ) {
+        resumeGame();
+        break;
+      }
   }
 });
 

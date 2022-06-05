@@ -208,6 +208,7 @@ button:hover {
   display: none;
 }
 
-#resumeGame {
+h6 {
+  margin-top: 8px;
   margin-bottom: 25px;
 }
