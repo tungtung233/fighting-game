@@ -62,10 +62,18 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
-  if (keys.d.pressed && player.lastKey === 'd') {
+  if (
+    keys.d.pressed &&
+    player.lastKey === 'd' &&
+    player.position.x <= canvas.width - player.width * player.scale
+  ) {
     player.velocity.x = 5;
     player.switchSprite('run');
-  } else if (keys.a.pressed && player.lastKey === 'a') {
+  } else if (
+    keys.a.pressed &&
+    player.lastKey === 'a' &&
+    player.position.x >= 0
+  ) {
     player.velocity.x = -5;
     player.switchSprite('run');
   } else {
@@ -79,10 +87,18 @@ function animate() {
   }
 
   // enemy movement
-  if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
+  if (
+    keys.ArrowRight.pressed &&
+    enemy.lastKey === 'ArrowRight' &&
+    enemy.position.x <= canvas.width - enemy.width * enemy.scale
+  ) {
     enemy.velocity.x = 5;
     enemy.switchSprite('run');
-  } else if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
+  } else if (
+    keys.ArrowLeft.pressed &&
+    enemy.lastKey === 'ArrowLeft' &&
+    enemy.position.x >= 0
+  ) {
     enemy.velocity.x = -5;
     enemy.switchSprite('run');
   } else {
@@ -152,10 +168,14 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
       // Player
       case 'd':
+        console.log(canvas.width);
+        console.log(player.position);
         keys.d.pressed = true;
         player.lastKey = 'd';
         break;
       case 'a':
+        console.log(canvas.width);
+        console.log(player.position);
         keys.a.pressed = true;
         player.lastKey = 'a';
         break;
@@ -176,10 +196,14 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
       // Enemy
       case 'ArrowRight':
+        console.log(canvas.width);
+        console.log(enemy.position);
         keys.ArrowRight.pressed = true;
         enemy.lastKey = 'ArrowRight';
         break;
       case 'ArrowLeft':
+        console.log(canvas.width);
+        console.log(enemy.position);
         keys.ArrowLeft.pressed = true;
         enemy.lastKey = 'ArrowLeft';
         break;
