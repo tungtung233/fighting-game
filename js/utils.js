@@ -105,11 +105,12 @@ function toggleScreen(id, toggle) {
 let gameAlive = false;
 
 function startGame() {
+  gameAlive = true;
+  animate();
   toggleScreen('startScreen', false);
   toggleScreen('gameScreen', true);
   timer = 5;
   decreaseTimer();
-  gameAlive = true;
   player.position.x = 100;
   enemy.position.x = 800;
 
@@ -141,4 +142,5 @@ function resumeGame() {
   gameAlive = true;
 
   decreaseTimer();
+  animate();
 }

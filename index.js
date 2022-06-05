@@ -45,7 +45,9 @@ const keys = {
 };
 
 function animate() {
-  window.requestAnimationFrame(animate);
+  if (gameAlive) {
+    window.requestAnimationFrame(animate);
+  }
   context.fillStyle = 'black';
   context.fillRect(0, 0, canvas.width, canvas.height);
   background.update();
@@ -145,8 +147,6 @@ function animate() {
   }
 }
 
-animate();
-
 window.addEventListener('keydown', (event) => {
   if (!player.dead && gameAlive) {
     switch (event.key) {
@@ -215,7 +215,7 @@ window.addEventListener('keyup', (event) => {
         break;
     }
   }
-  
+
   switch (event.key) {
     case 'd':
       keys.d.pressed = false;
