@@ -205,6 +205,17 @@ window.addEventListener('keydown', (event) => {
 });
 
 window.addEventListener('keyup', (event) => {
+  if (document.querySelector('#startScreen').style.display !== 'none') {
+    switch (event.key) {
+      case ' ':
+        startGame();
+        break;
+      case 'Enter':
+        startGame();
+        break;
+    }
+  }
+  
   switch (event.key) {
     case 'd':
       keys.d.pressed = false;
