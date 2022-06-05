@@ -16,7 +16,6 @@ function toggleGameModal(element, displayMode) {
 
 function determineWinner({ player, enemy, timerId }) {
   clearTimeout(timerId);
-  toggleGameModal('#endOfGame', 'flex');
   if (player.health === enemy.health) {
     document.querySelector('#results').style.color = 'var(--color-brown)';
     document.querySelector('#results').innerHTML = 'Tie';
@@ -30,6 +29,7 @@ function determineWinner({ player, enemy, timerId }) {
     document.querySelector('#results').innerHTML = 'Player 2 Wins!';
   }
   gameAlive = false;
+  toggleGameModal('#endOfGame', 'flex');
 }
 
 let timer;
@@ -106,7 +106,6 @@ let gameAlive = false;
 
 function startGame() {
   gameAlive = true;
-  animate();
   toggleScreen('startScreen', false);
   toggleScreen('gameScreen', true);
   timer = 5;
@@ -114,13 +113,11 @@ function startGame() {
 
   player.position.x = 100;
   player.position.y = player.offset.y;
-  player.velocity.x = 0;
   player.velocity.y = 0;
   player.health = 100;
 
   enemy.position.x = 800;
   enemy.position.y = enemy.offset.y;
-  enemy.velocity.x = 0;
   enemy.health = 100;
   enemy.velocity.y = 0;
 
@@ -129,6 +126,8 @@ function startGame() {
 
   toggleGameModal('#pauseGame', 'none');
   toggleGameModal('#endOfGame', 'none');
+
+  animate();
 }
 
 function restartGame() {
