@@ -187,9 +187,11 @@ window.addEventListener('keydown', (event) => {
     }
   }
 
-  switch (event.key) {
-    case 'Escape':
-      pauseGame();
+  if (document.querySelector('#endOfGame').style.display === 'none') {
+    switch (event.key) {
+      case 'Escape':
+        pauseGame();
+    }
   }
 });
 
