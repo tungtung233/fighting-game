@@ -29,6 +29,7 @@ function determineWinner({ player, enemy, timerId }) {
     document.querySelector('#results').innerHTML = 'Player 2 Wins!';
   }
   gameAlive = false;
+  document.querySelector('#pauseInstruction').style.display = 'none';
   toggleGameModal('#endOfGame', 'flex');
 }
 
@@ -126,6 +127,8 @@ function startGame() {
 
   toggleGameModal('#pauseGame', 'none');
   toggleGameModal('#endOfGame', 'none');
+
+  document.querySelector('#pauseInstruction').style.display = 'inline';
 
   animate();
 }
