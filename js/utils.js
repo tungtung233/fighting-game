@@ -108,7 +108,7 @@ function startGame() {
   gameAlive = true;
   toggleScreen('startScreen', false);
   toggleScreen('gameScreen', true);
-  timer = 5;
+  timer = 50;
   decreaseTimer();
 
   player.position.x = 100;
@@ -140,12 +140,16 @@ function pauseGame() {
   toggleGameModal('#pauseGame', 'flex');
   gameAlive = false;
 
+  document.querySelector('#pauseInstruction').style.display = 'none';
+
   clearTimeout(timerId);
 }
 
 function resumeGame() {
   toggleGameModal('#pauseGame', 'none');
   gameAlive = true;
+
+  document.querySelector('#pauseInstruction').style.display = 'inline';
 
   decreaseTimer();
   animate();
