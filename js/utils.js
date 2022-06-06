@@ -28,7 +28,7 @@ function determineWinner({ player, enemy, timerId }) {
       'var(--color--enemy-dark-purple)';
     document.querySelector('#results').innerHTML = 'Player 2 Wins!';
   }
-  gameAlive = false;
+
   document.querySelector('#pauseInstruction').style.display = 'none';
   toggleGameModal('#endOfGame', 'flex');
 }

@@ -115,7 +115,8 @@ function animate() {
   if (
     rectangularCollision({ rectangle1: player, rectangle2: enemy }) &&
     player.isAttacking &&
-    player.framesCurrent === player.sprites.attack.collide
+    player.framesCurrent === player.sprites.attack.collide &&
+    document.querySelector('#endOfGame').style.display === 'none'
   ) {
     enemy.takeHit();
     player.isAttacking = false;
@@ -135,7 +136,8 @@ function animate() {
   if (
     rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
     enemy.isAttacking &&
-    enemy.framesCurrent === enemy.sprites.attack.collide
+    enemy.framesCurrent === enemy.sprites.attack.collide &&
+    document.querySelector('#endOfGame').style.display === 'none'
   ) {
     player.takeHit();
     enemy.isAttacking = false;
