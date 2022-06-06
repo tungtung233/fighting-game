@@ -112,6 +112,9 @@ function startGame() {
   timer = 50;
   decreaseTimer();
 
+  player.image = player.sprites.idle.image;
+  enemy.image = enemy.sprites.idle.image;
+
   player.position.x = 100;
   player.position.y = player.offset.y;
   player.velocity.y = 0;
@@ -129,6 +132,9 @@ function startGame() {
   toggleGameModal('#endOfGame', 'none');
 
   document.querySelector('#pauseInstruction').style.display = 'inline';
+
+  player.dead = false;
+  enemy.dead = false;
 
   animate();
 }
