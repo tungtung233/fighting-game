@@ -34,8 +34,8 @@ const samuraiMack = {
     },
     attack: {
       imageSrc: './assets/samuraiMack/attack.png',
-      framesMax: 6,
-      collide: 4, //which frame to trigger the opposing take-hit animation
+      framesMax: 4,
+      collide: 2, //which frame to trigger the opposing take-hit animation
     },
     takeHit: {
       imageSrc: './assets/samuraiMack/take-hit-white-silhouette.png',
