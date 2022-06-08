@@ -64,14 +64,14 @@ function animate() {
   // player movement
   if (
     keys.d.pressed &&
-    player.lastKey === 'd' &&
+    player.lastDirectionKey === 'd' &&
     player.position.x <= canvas.width - player.width * player.scale
   ) {
     player.velocity.x = 5;
     player.switchSprite('run');
   } else if (
     keys.a.pressed &&
-    player.lastKey === 'a' &&
+    player.lastDirectionKey === 'a' &&
     player.position.x >= 0
   ) {
     player.velocity.x = -5;
@@ -89,14 +89,14 @@ function animate() {
   // enemy movement
   if (
     keys.ArrowRight.pressed &&
-    enemy.lastKey === 'ArrowRight' &&
+    enemy.lastDirectionKey === 'ArrowRight' &&
     enemy.position.x <= canvas.width - enemy.width * enemy.scale
   ) {
     enemy.velocity.x = 5;
     enemy.switchSprite('run');
   } else if (
     keys.ArrowLeft.pressed &&
-    enemy.lastKey === 'ArrowLeft' &&
+    enemy.lastDirectionKey === 'ArrowLeft' &&
     enemy.position.x >= 0
   ) {
     enemy.velocity.x = -5;
@@ -171,11 +171,11 @@ window.addEventListener('keydown', (event) => {
       // Player
       case 'd':
         keys.d.pressed = true;
-        player.lastKey = 'd';
+        player.lastDirectionKey = 'd';
         break;
       case 'a':
         keys.a.pressed = true;
-        player.lastKey = 'a';
+        player.lastDirectionKey = 'a';
         break;
       case 'w':
         if (player.jump < 2) {
@@ -186,7 +186,12 @@ window.addEventListener('keydown', (event) => {
           break; //do nothing
         }
       case ' ':
-        player.attack();
+        //fighter can only attack once every 500 ms
+        if (player.attackKeyRelease && player.lastAttack - timer >= 5) {
+          player.attack();
+          player.lastAttack = timer;
+          player.attackKeyRelease = false;
+        }
         break;
     }
   }
@@ -195,11 +200,11 @@ window.addEventListener('keydown', (event) => {
       // Enemy
       case 'ArrowRight':
         keys.ArrowRight.pressed = true;
-        enemy.lastKey = 'ArrowRight';
+        enemy.lastDirectionKey = 'ArrowRight';
         break;
       case 'ArrowLeft':
         keys.ArrowLeft.pressed = true;
-        enemy.lastKey = 'ArrowLeft';
+        enemy.lastDirectionKey = 'ArrowLeft';
         break;
       case 'ArrowUp':
         if (enemy.jump < 2) {
@@ -210,7 +215,12 @@ window.addEventListener('keydown', (event) => {
           break; //do nothing
         }
       case 'Enter':
-        enemy.attack();
+        //fighter can only attack once every 500 ms
+        if (enemy.attackKeyRelease && enemy.lastAttack - timer >= 5) {
+          enemy.attack();
+          enemy.lastAttack = timer;
+          enemy.attackKeyRelease = false;
+        }
         break;
     }
   }
@@ -251,6 +261,9 @@ window.addEventListener('keyup', (event) => {
     case 'a':
       keys.a.pressed = false;
       break;
+    case ' ':
+      player.attackKeyRelease = true;
+      break;
   }
 
   // enemy keys
@@ -260,6 +273,9 @@ window.addEventListener('keyup', (event) => {
       break;
     case 'ArrowLeft':
       keys.ArrowLeft.pressed = false;
+      break;
+    case 'Enter':
+      enemy.attackKeyRelease = true;
       break;
   }
 });

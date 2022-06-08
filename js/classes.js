@@ -88,7 +88,7 @@ class Fighter extends Sprite {
     this.velocity = velocity;
     this.width = width;
     this.height = 150;
-    this.lastKey;
+    this.lastDirectionKey;
     this.attackBox = {
       position: {
         x: this.position.x,
@@ -98,7 +98,9 @@ class Fighter extends Sprite {
       width: attackBox.width,
       height: attackBox.height,
     };
-    this.isAttacking;
+    this.lastAttack = 610; // total duration of game in seconds
+    this.attackKeyRelease = true; //ensures that the player released the attack button, rather than holding it down to constantly attack
+    this.isAttacking = false;
     this.health = 100;
     this.framesCurrent = 0;
     this.framesElapsed = 0;

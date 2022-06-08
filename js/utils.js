@@ -38,9 +38,9 @@ let timer;
 let timerId;
 function decreaseTimer() {
   if (timer > 0) {
-    timerId = setTimeout(decreaseTimer, 1000);
+    timerId = setTimeout(decreaseTimer, 100);
     timer--;
-    document.querySelector('#timer').innerHTML = timer;
+    document.querySelector('#timer').innerHTML = Math.floor(timer / 10);
   }
 
   if (timer === 0) {
@@ -110,7 +110,7 @@ function startGame() {
   gameAlive = true;
   toggleScreen('startScreen', false);
   toggleScreen('gameScreen', true);
-  timer = 50;
+  timer = 610; // 610 / 10 === 61 seconds (game duration is 60 seconds + 1 second for loading)
   decreaseTimer();
 
   player.image = player.sprites.idle.image;
