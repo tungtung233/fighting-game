@@ -9,11 +9,11 @@ const samuraiMack = {
   },
   imageSrc: './assets/samuraiMack/idle.png',
   framesMax: 8,
-  width: 37,
+  width: 22,
   scale: 2.5,
   offset: {
     x: 215,
-    y: 157,
+    y: 155,
   },
   sprites: {
     idle: {
@@ -58,8 +58,8 @@ const samuraiMack = {
 
 const kenji = {
   position: {
-    x: 400,
-    y: 100,
+    x: 0,
+    y: 0,
   },
   velocity: {
     x: 0,
@@ -67,7 +67,7 @@ const kenji = {
   },
   imageSrc: './assets/kenji/idle.png',
   framesMax: 4,
-  width: 33,
+  width: 24,
   scale: 2.5,
   offset: {
     x: 215,
@@ -125,7 +125,7 @@ const wizard = {
   },
   imageSrc: './assets/wizard/idle.png',
   framesMax: 6,
-  width: 57,
+  width: 45,
   scale: 1.6,
   offset: {
     x: 125,
@@ -183,7 +183,7 @@ const huntress = {
   },
   imageSrc: './assets/huntress/idle.png',
   framesMax: 8,
-  width: 32,
+  width: 20,
   scale: 3.2,
   offset: {
     x: 200,

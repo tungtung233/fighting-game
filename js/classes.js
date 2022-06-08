@@ -131,12 +131,21 @@ class Fighter extends Sprite {
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
     //visualise attackBox
-    // context.fillRect(
-    //   this.attackBox.position.x,
-    //   this.attackBox.position.y,
-    //   this.attackBox.width,
-    //   this.attackBox.height
-    // );
+    // if (!this.flipHorizontal) {
+    //   context.fillRect(
+    //     this.position.x + this.width * this.scale,
+    //     this.attackBox.position.y,
+    //     this.attackBox.width,
+    //     this.attackBox.height
+    //   );
+    // } else {
+    //   context.fillRect(
+    //     this.position.x,
+    //     this.attackBox.position.y,
+    //     3,
+    //     this.attackBox.height
+    //   );
+    // }
 
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
