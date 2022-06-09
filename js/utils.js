@@ -171,6 +171,8 @@ function selectBackground(backgroundId) {
       return forest;
     case 'oakWoods':
       return oakWoods;
+    case 'graveyard':
+      return graveyard;
   }
 }
 

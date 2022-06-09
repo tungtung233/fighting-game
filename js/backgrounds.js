@@ -31,3 +31,20 @@ const forest = {
     framesMax: 24,
   },
 };
+
+const graveyard = {
+  position: {
+    x: 0,
+    y: 0,
+  },
+  imageSrc: './assets/backgrounds/graveyard.png',
+  backgroundDecoration: {
+    position: {
+      x: 875,
+      y: 450,
+    },
+    imageSrc: './assets/backgrounds/graveyard-backgroundDecoration.png',
+    scale: 2,
+    framesMax: 24,
+  },
+};
