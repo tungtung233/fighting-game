@@ -164,3 +164,26 @@ function resumeGame() {
   decreaseTimer();
   animate();
 }
+
+function selectBackground(backgroundId) {
+  switch (backgroundId) {
+    case 'forest':
+      return forest;
+    case 'oakWoods':
+      return oakWoods;
+  }
+}
+
+function switchBackground(backgroundId) {
+  background = new Sprite(selectBackground(backgroundId));
+
+  backgroundDecoration = new Sprite(
+    selectBackground(backgroundId).backgroundDecoration
+  );
+
+  if (document.querySelector('.select-background')) {
+    document.querySelector('.select-background').classList.remove('select-background');
+  }
+
+  document.querySelector(`#${backgroundId}`).classList.add('select-background');
+}

@@ -7,7 +7,6 @@ class Sprite {
     offset = { x: 0, y: 0 },
   }) {
     this.position = position;
-    this.height = 150;
     this.image = new Image();
     this.image.src = imageSrc;
     this.scale = scale;

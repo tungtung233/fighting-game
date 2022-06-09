@@ -10,7 +10,26 @@
 <body>
   <h1>Fighting Game</h1>
   <div id="startScreen" class="screen">
-    <div id="player1" class="player">
+    <div class="backgroundSelection divider">
+      <h3>Environment:</h3>
+      <div class="backgroundDetails">
+        <img
+          src="./assets/backgrounds/forest-avatar.png"
+          alt="forest"
+          id="forest"
+          class="avatar backgroundAvatar"
+          onClick="switchBackground(id)"
+        />
+        <img
+          src="./assets/backgrounds/oakWoods-avatar.png"
+          alt="oakWoods"
+          id="oakWoods"
+          class="avatar backgroundAvatar"
+          onClick="switchBackground(id)"
+        />
+      </div>
+    </div>
+    <div class="player divider">
       <h3>Player 1:</h3>
       <div class="fighterDetails">
         <div>
@@ -18,35 +37,35 @@
             src="./assets/samuraiMack/avatar.png"
             alt="Samurai Mack"
             id="samuraiMack-player"
-            class="fighterAvatar select-player"
+            class="avatar fighterAvatar select-player"
             onClick="switchFighter(id)"
           />
           <img
             src="./assets/kenji/avatar.png"
             alt="Kenji"
             id="kenji-player"
-            class="fighterAvatar"
+            class="avatar fighterAvatar"
             onClick="switchFighter(id)"
           />
           <img
             src="./assets/wizard/avatar.png"
             alt="Wizard"
             id="wizard-player"
-            class="fighterAvatar"
+            class="avatar fighterAvatar"
             onClick="switchFighter(id)"
           />
           <img
             src="./assets/huntress/avatar.png"
             alt="Huntress"
             id="huntress-player"
-            class="fighterAvatar"
+            class="avatar fighterAvatar"
             onClick="switchFighter(id)"
           />
         </div>
         <img src="./assets/keyboard/keyboardPlayer.png" class="keyboard" />
       </div>
     </div>
-    <div id="player2" class="player">
+    <div class="player">
       <h3>Player 2:</h3>
       <div class="fighterDetails">
         <div>
@@ -54,28 +73,28 @@
             src="./assets/samuraiMack/avatar.png"
             alt="Samurai Mack"
             id="samuraiMack-enemy"
-            class="fighterAvatar"
+            class="avatar fighterAvatar"
             onClick="switchFighter(id)"
           />
           <img
             src="./assets/kenji/avatar.png"
             alt="Kenji"
             id="kenji-enemy"
-            class="fighterAvatar select-enemy"
+            class="avatar fighterAvatar select-enemy"
             onClick="switchFighter(id)"
           />
           <img
             src="./assets/wizard/avatar.png"
             alt="Wizard"
             id="wizard-enemy"
-            class="fighterAvatar"
+            class="avatar fighterAvatar"
             onClick="switchFighter(id)"
           />
           <img
             src="./assets/huntress/avatar.png"
             alt="Huntress"
             id="huntress-enemy"
-            class="fighterAvatar"
+            class="avatar fighterAvatar"
             onClick="switchFighter(id)"
           />
         </div>
@@ -126,6 +145,7 @@
   ></script>
   <script src="js/utils.js"></script>
   <script src="js/classes.js"></script>
+  <script src="js/backgrounds.js"></script>
   <script src="js/fighters.js"></script>
   <script src="index.js"></script>
 </body>

@@ -8,23 +8,9 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
 
-const background = new Sprite({
-  position: {
-    x: 0,
-    y: 0,
-  },
-  imageSrc: './assets/background.png',
-});
-
-const shop = new Sprite({
-  position: {
-    x: 620,
-    y: 130,
-  },
-  imageSrc: './assets/shop.png',
-  scale: 2.75,
-  framesMax: 6,
-});
+let background;
+let backgroundDecoration;
+switchBackground('forest'); //default background
 
 let player = new Fighter(samuraiMack); //default starter fighter
 let enemy = new Fighter(kenji); //default starter fighter
@@ -51,7 +37,7 @@ function animate() {
   context.fillStyle = 'black';
   context.fillRect(0, 0, canvas.width, canvas.height);
   background.update();
-  shop.update();
+  backgroundDecoration.update();
   context.fillStyle = 'rgba(255, 255, 255, 0.15)';
   context.fillRect(0, 0, canvas.width, canvas.height);
   faceDirection({ player, enemy });
