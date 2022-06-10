@@ -120,11 +120,13 @@ function startGame() {
   player.position.y = player.offset.y;
   player.velocity.y = 0;
   player.health = 100;
+  player.lastAttack = timer;
 
   enemy.position.x = 800;
   enemy.position.y = enemy.offset.y;
   enemy.health = 100;
   enemy.velocity.y = 0;
+  enemy.lastAttack = timer;
 
   document.querySelector('#playerHealth').style.width = '100%';
   document.querySelector('#enemyHealth').style.width = '100%';
