@@ -173,7 +173,7 @@ window.addEventListener('keydown', (event) => {
         }
       case ' ':
         //fighter can only attack once every 500 ms
-        if (player.attackKeyRelease && player.lastAttack - timer >= 5) {
+        if (player.attackKeyRelease && player.lastAttack - timer >= 3) {
           player.attack();
           player.lastAttack = timer;
           player.attackKeyRelease = false;
@@ -202,7 +202,7 @@ window.addEventListener('keydown', (event) => {
         }
       case 'Enter':
         //fighter can only attack once every 500 ms
-        if (enemy.attackKeyRelease && enemy.lastAttack - timer >= 5) {
+        if (enemy.attackKeyRelease && enemy.lastAttack - timer >= 3) {
           enemy.attack();
           enemy.lastAttack = timer;
           enemy.attackKeyRelease = false;
