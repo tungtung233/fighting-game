@@ -246,6 +246,7 @@ h6 {
 .backgroundAvatar {
   height: 80px;
   margin: 0 15px;
+  border-radius: 4px;
 }
 
 .select-background {
