@@ -29,6 +29,11 @@ const forest = {
     imageSrc: './assets/backgrounds/forest-backgroundDecoration.png',
     scale: 1.5,
     framesMax: 24,
+    pauseAnimation: {
+      pause: true,
+      pauseDuration: 3,
+      pauseCount: 0,
+    },
   },
 };
 
@@ -46,5 +51,10 @@ const graveyard = {
     imageSrc: './assets/backgrounds/graveyard-backgroundDecoration.png',
     scale: 2,
     framesMax: 24,
+    pauseAnimation: {
+      pause: true,
+      pauseDuration: 3,
+      pauseCount: 0,
+    },
   },
 };

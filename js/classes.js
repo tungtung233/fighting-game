@@ -5,6 +5,7 @@ class Sprite {
     scale = 1,
     framesMax = 1,
     offset = { x: 0, y: 0 },
+    pauseAnimation = false,
   }) {
     this.position = position;
     this.image = new Image();
@@ -13,8 +14,9 @@ class Sprite {
     this.framesMax = framesMax;
     this.framesCurrent = 0;
     this.framesElapsed = 0;
-    this.framesHold = 6;
+    this.framesHold = 6; //every 6 frames, advance framesCurrent by 1
     this.offset = offset;
+    this.pauseAnimation = pauseAnimation;
   }
 
   draw(flipHorizontal) {
@@ -47,8 +49,25 @@ class Sprite {
     if (this.framesElapsed % this.framesHold === 0) {
       if (this.framesCurrent < this.framesMax - 1) {
         this.framesCurrent++;
+      } else if (!this.pauseAnimation) {
+        this.framesCurrent = 0;
+      }
+    }
+
+    // pause duration = framesMax * framesHold * pauseDuration
+    if (
+      this.pauseAnimation &&
+      this.framesElapsed % (this.framesMax * this.framesHold) === 0
+    ) {
+      if (
+        this.pauseAnimation.pauseCount !== this.pauseAnimation.pauseDuration
+      ) {
+        this.pauseAnimation.pauseCount++;
+        this.framesCurrent = this.framesMax - 1;
       } else {
         this.framesCurrent = 0;
+        this.pauseAnimation.pauseCount = 0;
+        this.pauseAnimation.pauseDuration = Math.floor(Math.random() * 5);
       }
     }
   }
