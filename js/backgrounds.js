@@ -23,7 +23,7 @@ const forest = {
   imageSrc: './assets/backgrounds/forest.png',
   backgroundDecoration: {
     position: {
-      x: 200,
+      x: 220,
       y: 430,
     },
     imageSrc: './assets/backgrounds/forest-backgroundDecoration.png',
