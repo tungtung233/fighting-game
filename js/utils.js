@@ -166,13 +166,21 @@ function resumeGame() {
 }
 
 function selectBackground(backgroundId) {
-  switch (backgroundId) {
-    case 'forest':
-      return forest;
-    case 'oakWoods':
-      return oakWoods;
-    case 'graveyard':
-      return graveyard;
+  if (backgroundId === 'forest') {
+    const healthBar = document.getElementsByClassName('healthBar');
+    healthBar[0].style.backgroundColor = '#389178';
+    healthBar[1].style.backgroundColor = '#389178';
+    return forest;
+  } else if (backgroundId === 'oakWoods') {
+    const healthBar = document.getElementsByClassName('healthBar');
+    healthBar[0].style.backgroundColor = '#818cf8';
+    healthBar[1].style.backgroundColor = '#818cf8';
+    return oakWoods;
+  } else if (backgroundId === 'graveyard') {
+    const healthBar = document.getElementsByClassName('healthBar');
+    healthBar[0].style.backgroundColor = '#2b76a9';
+    healthBar[1].style.backgroundColor = '#2b76a9';
+    return graveyard;
   }
 }
 
@@ -184,7 +192,9 @@ function switchBackground(backgroundId) {
   );
 
   if (document.querySelector('.select-background')) {
-    document.querySelector('.select-background').classList.remove('select-background');
+    document
+      .querySelector('.select-background')
+      .classList.remove('select-background');
   }
 
   document.querySelector(`#${backgroundId}`).classList.add('select-background');

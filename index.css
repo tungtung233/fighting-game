@@ -152,13 +152,13 @@ button:hover {
 }
 
 .damageBar {
-  background-color: #e62020;
+  background-color: #d12e28;
   height: 30px;
 }
 
 .healthBar {
   position: absolute;
-  background: #818cf8;
+  background: #389178;
   top: 0;
   right: 0;
   bottom: 0;
