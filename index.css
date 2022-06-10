@@ -252,3 +252,8 @@ h6 {
   border: 2px solid var(--color-brown);
   opacity: 1;
 }
+
+h4 {
+  color: var(--color-offwhite);
+  margin-top: 30px;
+}
