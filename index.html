@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <h1>Fighting Game</h1>
+  <h1>Pixel Fight</h1>
   <div id="startScreen" class="screen">
     <div class="backgroundSelection divider">
       <h3>Environment:</h3>
@@ -115,7 +115,7 @@
       </div>
     </div>
     <button onClick="startGame()">Start Game</button>
-    <h6>(press Space or Enter to start game)</h6>
+    <div class="changeModeInstruction">(press Space or Enter to start game)</div >
   </div>
   <div id="gameScreen">
     <div class="healthTimer">
@@ -144,7 +144,7 @@
 
     <div id="pauseGame" class="gameModal">
       <button onClick="resumeGame()">Resume Game</button>
-      <h6>(press Esc to resume game)</h6>
+      <div class="changeModeInstruction">(press Esc to resume game)</div >
       <button onClick="restartGame()">Restart Game</button>
     </div>
 
@@ -162,7 +162,9 @@
     referrerpolicy="no-referrer"
   ></script>
 
-  <script src="js/utils.js"></script>
+  <script src="js/utils/gameSetup.js"></script>
+  <script src="js/utils/gameMode.js"></script>
+  <script src="js/utils/gameFunctionality.js"></script>
   <script src="js/classes.js"></script>
   <script src="js/backgrounds.js"></script>
   <script src="js/fighters.js"></script>
